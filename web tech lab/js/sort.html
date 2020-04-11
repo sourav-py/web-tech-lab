@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort strings</title>
+    <style>
+        div
+        {
+            margin : 1% 0%;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id1">
+    </div>
+    
+    <div id="bs">
+    </div>
+    
+    <div id = "id2">
+    </div>
+
+    <div id="as">
+    </div>
+    
+    <script>
+
+        var n = prompt("Enter number of strings");
+        var arr = []
+        for(var i=0;i<n;i++)
+        {
+            var string = prompt("Enter string "+parseInt(i+1));
+            arr.push(string);
+        }
+        document.getElementById("id1").innerHTML = "Before Sorting";
+        document.getElementById("bs").innerHTML = arr;
+        arr.sort();
+        document.getElementById("id2").innerHTML = "After sorting";
+        document.getElementById("as").innerHTML = arr;
+
+    </script>
+</body>
+</html>

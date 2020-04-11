@@ -1,0 +1,24 @@
+<!-- root = employees -->
+<!ELEMENT employees (employee+)>
+
+<!ELEMENT employee (id,name,department,salary,projects+)>
+
+<!ELEMENT id (#PCDATA)>
+
+<!-- name -->
+<!ELEMENT name (first_name,middle_name?,last_name)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT middle_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
+
+<!-- project -->
+<!ELEMENT projects (project_id,project_name,project_location+)>
+<!ELEMENT project_id (#PCDATA)>
+<!ELEMENT project_name (#PCDATA)>
+<!ELEMENT project_location (#PCDATA)>
+
+
+<!-- SOURAV SINGH UE183106 -->

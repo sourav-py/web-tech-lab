@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="interface.css">
+    <title>sign up</title>
+</head>
+<body>
+    <div class="center-box">
+        <form class="main-form" id="main-form">
+
+            <div>
+                <label>user name</label>
+                <input placeholder="user name" id="name" type="text">
+            </div>
+
+            <div>
+                <label>email</label>
+                <input placeholder="e-mail" id="mail" type="email">
+            </div>
+
+            
+            <div class="buttons">
+                <button type = "submit" onclick="submitFun();">submit</button>
+                
+            </div>
+            
+        </form>
+    </div>
+    <script>
+        function submitFun()
+        {
+           
+            var mail= document.getElementById("mail").value;
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+            {
+                return true;
+            }
+            alert("You have entered an invalid email address!")
+            return (false)    
+        }
+    </script>
+    
+</body>
+</html>
