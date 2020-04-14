@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>verify xml</title>
+</head>
+<!---SOURAV SINGH UE183106-->
+<body>
+    <h3> verify xml doc</h3>
+    <script>
+        var xmlFile = prompt("Please enter the name of the XML file to validate.","Enter file name here"); 
+        if (xmlFile)
+        {
+            var xmlDoc = new ActiveXObject("Microsoft.XMLDOM"); 
+            with(xmlDoc)
+            {
+                xmlDoc.async = false;
+                xmlDoc.validateOnParse = true; 
+                xmlDoc.load(xmlFile); 
+            }
+            with(document)
+            {
+                if ( xmlDoc.parseError.errorCode ) 
+                {
+                    document.fgColor = "red"; 
+                    write("XML document \"" + xmlFile + "\" is improperly formatted according to DTD specifications."); 
+                    write("<br/><br/>Error Code: "); 
+                    write(xmlDoc.parseError.errorCode); 
+                    write("<br/>Error Reason: "); 
+                    write(xmlDoc.parseError.reason); 
+                    write("<br/>Error Line: "); 
+                    write(xmlDoc.parseError.line); 
+                }
+                else
+                {
+                    document.fgColor = "black"; 
+                    write("XML document \"" + xmlFile + "\" conforms to DTD specifications."); 
+                }
+            }
+        }
+        else
+        {
+            document.write("couldn't open file");
+        }
+    </script>
+    
+</body>
+</html>
